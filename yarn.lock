@@ -4135,6 +4135,10 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
+polished@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-1.8.0.tgz#21d5389c23ebb47e872f991b0b07503c618d5feb"
+
 postcss-calc@^5.2.0:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-5.3.1.tgz#77bae7ca928ad85716e2fda42f261bf7c1d65b5e"

@@ -1,0 +1,5 @@
+let myInt = 5;
+let myInt = (5: int);
+let myInt = (5: int) + (4: int);
+let add (x: int) (y: int) :int => x + y;
+let drawCircle radius::(r: int) :unit => ...;

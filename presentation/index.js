@@ -10,6 +10,7 @@ import {
   BlockQuote,
   Quote,
   Cite,
+  CodePane,
   Heading,
   Layout,
   Fill,
@@ -23,6 +24,7 @@ import {
 } from "spectacle";
 
 import CodeSlide from "spectacle-code-slide";
+import { darken } from "polished";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
@@ -36,7 +38,7 @@ require("spectacle/lib/themes/default/index.css");
 const theme = createTheme(
   {
     primary: "white",
-    secondary: "#60C7E8",
+    secondary: darken(0.1, "#60C7E8"),
     tertiary: "#0059AC",
     quartenary: "#010121"
   }
@@ -51,7 +53,10 @@ const images = {
   money: require("../assets/images/money.jpg"),
   savannah: require("../assets/images/savannah.jpg"),
   kenWheeler: require("../assets/images/ken_wheeler.jpg"),
-  flowLogo: require("../assets/images/flow_logo.png")
+  flowLogo: require("../assets/images/flow_logo.png"),
+  typescriptLogo: require("../assets/images/typescript_logo.svg"),
+  jungle: require("../assets/images/jungle.jpg"),
+  reasonLogo: require("../assets/images/reason_logo.png")
 };
 
 preloader(images);
@@ -151,6 +156,11 @@ const Presentation = () => (
         </Appear>
       </List>
     </Slide>
+    <Slide bgColor="quartenary" transition={["fade"]}>
+      <Heading size={2} textColor="white">
+        Dokumentasjon
+      </Heading>
+    </Slide>
     <Slide bgImage={images.savannah} bgDarken={0.7}>
       <Appear>
         <Heading textColor="goldenrod">Type systems safari</Heading>
@@ -159,10 +169,15 @@ const Presentation = () => (
     <Slide bgColor="#2D343A">
       <Image height="10rem" src={images.flowLogo} />
     </Slide>
-
+    <Slide>
+      <List>
+        <ListItem>Utviklet av Facebook</ListItem>
+        <ListItem>Inkrementell innføring</ListItem>
+        <ListItem>Bredt økosystem</ListItem>
+      </List>
+    </Slide>
     <CodeSlide
       bgColor="quartenary"
-      id="flow-example"
       code={require("raw-loader!../assets/examples/flow-example1.js.example")}
       lang="js"
       ranges={[
@@ -171,19 +186,84 @@ const Presentation = () => (
           title: "Opt-in per fil"
         },
         {
-          loc: [2, 3],
+          loc: [2, 4],
           title: "Type-annotering"
         },
         {
-          loc: [6, 1],
+          loc: [6, 7],
           title: "No, sir!"
         }
       ]}
     />
+    <Slide>
+      <Text>Flow - key takeaways</Text>
+      <List>
+        <ListItem>"Valgfritt"</ListItem>
+        <ListItem>Inkrementell "adoptering"</ListItem>
+        <ListItem>Inferens</ListItem>
+      </List>
+    </Slide>
+    <Slide bgColor="#294E80">
+      <Image height="10rem" src={images.typescriptLogo} />
+    </Slide>
+    <Slide notes={'"Mye" eldre enn Flow...'}>
+      <List>
+        <ListItem>Utviklet av Mirosoft/Google</ListItem>
+        <ListItem>"Tett" knyttet til Angular-verden</ListItem>
+        <Appear>
+          <ListItem>Større investering for et prosjekt enn Flow</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem>Super editor-integrasjon + community</ListItem>
+        </Appear>
+      </List>
+    </Slide>
+    <Slide
+      transition={["fade"]}
+      bgImage={images.jungle}
+      bgDarken={0.7}
+      notes="Vi skal over til noe som er veldig annerledes. Men det trenger ikke være såååå skummelt"
+    >
+      <Appear>
+        <Heading size={2} textColor={darken(0.2, "white")}>
+          Meanwhile, deep in the jungle
+        </Heading>
+      </Appear>
+    </Slide>
+    <Slide bgColor="#F6F4F4">
+      <Image src={images.reasonLogo} />
+    </Slide>
+
+    <Slide notes="Fun fact: Flow er bygd OPPÅ OCaml">
+      <List>
+        <ListItem>Basert på OCaml</ListItem>
+        <ListItem>Kompilerer til JavaScript via BuckleScript</ListItem>
+        <ListItem>Utviklet av Facebook</ListItem>
+      </List>
+    </Slide>
+    <Slide>
+      <CodePane
+        textSize="1.8rem"
+        source={require("raw-loader!../assets/examples/reason_example.re.example")}
+        lang="reason"
+      />
+    </Slide>
 
     <Slide>
-      <Image height="30rem" src={images.money} />
+      <Text textSize="4rem" margin="2rem">
+        Now what?
+      </Text>
+      <Appear>
+        <Text textColor="firebrick" textSize="3rem">
+          Hvorfor skal vi bruke slike støtteverktøy?
+        </Text>
+      </Appear>
     </Slide>
+
+    <Slide />
+    {/* <Slide>
+        <Image height="30rem" src={images.money} />
+        </Slide> */}
     <Slide>
       <Image
         style={{
@@ -205,20 +285,6 @@ const Presentation = () => (
         <Cite textColor="goldenrod">Ken Wheeler</Cite>
       </BlockQuote>
     </Slide>
-    <Slide>
-      <Text>Fallgruver</Text>
-      <List>
-        <ListItem>Anys</ListItem>
-        {/* <ListItem></ListItem>
-              <ListItem></ListItem>
-              <ListItem></ListItem> */}
-      </List>
-    </Slide>
-    {/* <Slide bgColor="quartenary" transition={["slide"]}>
-          <Heading size={2} textColor="primary">
-          Historietid!
-          </Heading>
-          </Slide> */}
   </Deck>
 );
 
