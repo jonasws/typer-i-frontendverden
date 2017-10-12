@@ -301,6 +301,17 @@ const Presentation = () => (
     />
 
     <Slide>
+      <Text>Honorable mentions</Text>
+      <Appear>
+        <List>
+          <ListItem>Elm</ListItem>
+          <ListItem>Kotlin</ListItem>
+          <ListItem>PureScript</ListItem>
+        </List>
+      </Appear>
+    </Slide>
+
+    <Slide>
       <Text textSize="4rem" margin="2rem">
         Now what?
       </Text>
@@ -384,6 +395,23 @@ const Presentation = () => (
 
     <Slide>
       <Heading size={2}>Spørsmål/Diskusjon</Heading>
+    </Slide>
+
+    <Slide>
+      <List>
+        <ListItem textSize="2rem">
+          <a href="https://vimeo.com/album/4766821/video/233821619">
+            The road to a statically typed future
+          </a>{" "}
+          - Patrick Stapfer
+        </ListItem>
+        <ListItem textSize="2rem" margin="2rem 0">
+          <a href="https://www.youtube.com/watch?v=V1po0BT7kac">
+            Type Systems Will Make You a Better JavaScript Developer
+          </a>{" "}
+          - Jared Forsyth
+        </ListItem>
+      </List>
     </Slide>
 
     <Slide>
