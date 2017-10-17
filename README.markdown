@@ -1,6 +1,7 @@
 # Typer i frontendverden
 
 Kode for slides til presentasjonen "Typer i frontendverden: En nødvendighet, eller unødvendig?"
+Slidene er publishert her: http://capracon-typer-i-frontendverden.surge.sh/#/
 
 ## Running the show
 ```bash
